@@ -1,0 +1,12 @@
+name: Hello World Reusable
+on:
+  workflow_call:
+    inputs:
+      name:
+        type: string
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print name or world
+        run: echo "${{ inputs.name || 'world' }}"
